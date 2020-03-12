@@ -1,0 +1,11 @@
+/Users/aleclightyear/Desktop/cSharpDemo/bin/Debug/netcoreapp2.2/cSharpDemo.deps.json
+/Users/aleclightyear/Desktop/cSharpDemo/bin/Debug/netcoreapp2.2/cSharpDemo.runtimeconfig.json
+/Users/aleclightyear/Desktop/cSharpDemo/bin/Debug/netcoreapp2.2/cSharpDemo.runtimeconfig.dev.json
+/Users/aleclightyear/Desktop/cSharpDemo/bin/Debug/netcoreapp2.2/cSharpDemo.dll
+/Users/aleclightyear/Desktop/cSharpDemo/bin/Debug/netcoreapp2.2/cSharpDemo.pdb
+/Users/aleclightyear/Desktop/cSharpDemo/obj/Debug/netcoreapp2.2/cSharpDemo.csprojAssemblyReference.cache
+/Users/aleclightyear/Desktop/cSharpDemo/obj/Debug/netcoreapp2.2/cSharpDemo.csproj.CoreCompileInputs.cache
+/Users/aleclightyear/Desktop/cSharpDemo/obj/Debug/netcoreapp2.2/cSharpDemo.AssemblyInfoInputs.cache
+/Users/aleclightyear/Desktop/cSharpDemo/obj/Debug/netcoreapp2.2/cSharpDemo.AssemblyInfo.cs
+/Users/aleclightyear/Desktop/cSharpDemo/obj/Debug/netcoreapp2.2/cSharpDemo.dll
+/Users/aleclightyear/Desktop/cSharpDemo/obj/Debug/netcoreapp2.2/cSharpDemo.pdb

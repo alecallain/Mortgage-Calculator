@@ -56,9 +56,11 @@ namespace MortgageCalculator
                 {
                 case 1: 
                     Console.WriteLine("You have chosen to calcluate your monthly cost");
+                    calc.monthlyCost();
                     break;
                 case 2:
                     Console.WriteLine("You have chosen to calculate your maximum amount");
+                    maximumLoan();
                     break;
                 case 3:
                     Console.WriteLine("You have chosen to exit the program\nHave a great day!");
@@ -80,7 +82,15 @@ namespace MortgageCalculator
         *
         * @param 
         */
-        static int monthlyCost() {
+        public int monthlyCost() {
+            Console.WriteLine("Please enter the specified amount of your mortgage: ");
+            amount = Convert.ToInt32(Console.ReadLine());
+            while (amount < 0) {
+                Console.WriteLine("You need to enter a positive number for your mortgage");
+                Console.WriteLine("Please enter the specified amount of your mortgage: ");
+                amount = Convert.ToInt32(Console.ReadLine());
+            }
+
             return 0;
         }
 

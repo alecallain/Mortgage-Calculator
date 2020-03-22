@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 //using System.Windows.Forms;
 
 /*****************************************
@@ -60,7 +61,7 @@ namespace MortgageCalculator
                     break;
                 case 2:
                     Console.WriteLine("You have chosen to calculate your maximum amount");
-                    maximumLoan();
+                    calc.maximumLoan();
                     break;
                 case 3:
                     Console.WriteLine("You have chosen to exit the program\nHave a great day!");
@@ -82,7 +83,10 @@ namespace MortgageCalculator
         *
         * @param 
         */
-        public int monthlyCost() {
+        private double monthlyCost() {
+            double monthlyPayment = 0;
+            double paymentCount = 0;
+
             Console.WriteLine("Please enter the specified amount of your mortgage: ");
             amount = Convert.ToInt32(Console.ReadLine());
             while (amount < 0) {
@@ -90,8 +94,28 @@ namespace MortgageCalculator
                 Console.WriteLine("Please enter the specified amount of your mortgage: ");
                 amount = Convert.ToInt32(Console.ReadLine());
             }
+            Console.WriteLine("Please enter the interest rate of your mortgage: ");
+            rate = Convert.ToInt32(Console.ReadLine());
+            while (rate < 0) {
+                Console.WriteLine("Please enter the correct format for interest");
+                Console.WriteLine("Please enter the interest rate of your mortgage: ");
+                rate = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Please enter the amount of years you're paying for your mortgage: ");
+            years = Convert.ToInt32(Console.ReadLine());
+            while (years < 0) {
+                Console.WriteLine("Please make sure the years are positive");
+                Console.WriteLine("Please enter the amoutn of years you're paying for your mortgage: ");
+                years = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Your monthly payment will now be calculated...");
 
-            return 0;
+            Thread.Sleep(TimeSpan.FromSeconds(10));
+
+            paymentCount = years * 12;
+            monthlyPayment = amount * (rate * Math.Pow(1 + rate, paymentCount) );
+
+            return monthlyPayment;
         }
 
         /**
@@ -99,7 +123,7 @@ namespace MortgageCalculator
         *
         * @param 
         */
-        static int maximumLoan() {
+        private int maximumLoan() {
             return 0;
         }
     }

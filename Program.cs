@@ -19,7 +19,7 @@ namespace MortgageCalculator
 {
     class Calculator
     {
-        // Instance variables for calculator class
+        // Instance/Global variables for calculator class
         private string name {get; set;}
         private int amount {get; set;}
         private int years {get; set;}
@@ -42,17 +42,22 @@ namespace MortgageCalculator
             Console.WriteLine("What is your name? Enter it below: ");
             calc.name = Console.ReadLine();
 
-            while (int.TryParse(calc.name, out test)) {
+            // Determines if there's any special characters in the string the user enters
+            while (int.TryParse(calc.name, out test))
+            {
                 Console.WriteLine("Please do not have any numbers or special characters in your name");
                 Console.WriteLine("What is your name? Enter it below: ");
                 calc.name = Console.ReadLine();
             }
 
+            // User picks from three different options
             Console.WriteLine("Hello {0}! We are now going to calculate your mortgage. Would you like to:\n1. Calculate the monthly cost of your mortgage\n2. Calculate the maximum amount of money you can take out for a loan\n3. Exit the program", calc.name);
             Console.WriteLine("Enter the number of the choice you pick: ");
 
+            // Continuous loop so the program doesnt abruptly end unless specified
             choice = Convert.ToInt32(Console.ReadLine());
-            while (choice != 3) {
+            while (choice != 3)
+            {
                 switch(choice)
                 {
                 case 1: 
@@ -81,29 +86,35 @@ namespace MortgageCalculator
         /**
         * Calculates the total monthly cost of the mortgage
         *
-        * @param 
+        * @return final monthly payment to the user
         */
-        private double monthlyCost() {
+        private double monthlyCost() 
+        {
+            // Local variables for method
             double monthlyPayment = 0;
             double paymentCount = 0;
 
+            // Method constantly checks to determine if correct format of numbers is entered
             Console.WriteLine("Please enter the specified amount of your mortgage: ");
             amount = Convert.ToInt32(Console.ReadLine());
-            while (amount < 0) {
+            while (amount < 0) 
+            {
                 Console.WriteLine("You need to enter a positive number for your mortgage");
                 Console.WriteLine("Please enter the specified amount of your mortgage: ");
                 amount = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("Please enter the interest rate of your mortgage: ");
             rate = Convert.ToInt32(Console.ReadLine());
-            while (rate < 0) {
+            while (rate < 0) 
+            {
                 Console.WriteLine("Please enter the correct format for interest");
                 Console.WriteLine("Please enter the interest rate of your mortgage: ");
                 rate = Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("Please enter the amount of years you're paying for your mortgage: ");
             years = Convert.ToInt32(Console.ReadLine());
-            while (years < 0) {
+            while (years < 0) 
+            {
                 Console.WriteLine("Please make sure the years are positive");
                 Console.WriteLine("Please enter the amoutn of years you're paying for your mortgage: ");
                 years = Convert.ToInt32(Console.ReadLine());
@@ -115,16 +126,23 @@ namespace MortgageCalculator
             paymentCount = years * 12;
             monthlyPayment = amount * (rate * Math.Pow(1 + rate, paymentCount)) / ((Math.Pow(1 + rate, paymentCount)) - 1);
 
+            Console.WriteLine("Your monthly payment for your mortgage is: $" + monthlyPayment + " per month");
+
             return monthlyPayment;
         }
 
         /**
-        * Calculates the total amount a client borrow
+        * Calculates the total amount a client can borrow for a mortgage
         *
-        * @param 
+        * @return total mortgage amount
         */
-        private int maximumLoan() {
-            return 0;
+        private double maximumLoan() 
+        {
+            // Local variables for method
+            double maxLoan = 0;
+            double paymentCount = 0;
+
+            return maxLoan;
         }
     }
 }

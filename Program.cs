@@ -113,7 +113,7 @@ namespace MortgageCalculator
             Thread.Sleep(TimeSpan.FromSeconds(10));
 
             paymentCount = years * 12;
-            monthlyPayment = amount * (rate * Math.Pow(1 + rate, paymentCount) );
+            monthlyPayment = amount * (rate * Math.Pow(1 + rate, paymentCount)) / ((Math.Pow(1 + rate, paymentCount)) - 1);
 
             return monthlyPayment;
         }

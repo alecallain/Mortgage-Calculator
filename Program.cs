@@ -167,6 +167,16 @@ namespace MortgageCalculator
                 years = Convert.ToInt32(Console.ReadLine());
             }
 
+            Console.WriteLine("Your maximum loan amount will now be calculated...");
+
+            Thread.Sleep(TimeSpan.FromSeconds(10));
+
+            paymentCount = years * 12;
+
+            maxLoan = monthlyPayment * ((Math.Pow(1 + rate, paymentCount)) - 1) / (rate * Math.Pow(1 + rate, paymentCount));
+
+            Console.WriteLine("The maximum loan you can take out is: $" + maxLoan);
+
             return maxLoan;
         }
     }

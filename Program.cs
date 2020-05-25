@@ -65,7 +65,7 @@ namespace MortgageCalculator
                     calc.monthlyCost();
                     break;
                 case 2:
-                    Console.WriteLine("You have chosen to calculate your maximum amount");
+                    Console.WriteLine("You have chosen to calculate your maximum loan amount");
                     calc.maximumLoan();
                     break;
                 case 3:
@@ -140,7 +140,32 @@ namespace MortgageCalculator
         {
             // Local variables for method
             double maxLoan = 0;
+            double monthlyPayment = 0;
             double paymentCount = 0;
+
+            Console.WriteLine("Please enter the amount you pay monthly on your mortgage: ");
+            monthlyPayment = Convert.ToInt32(Console.ReadLine());
+            while (monthlyPayment < 0) {
+                Console.WriteLine("You need to enter a valid amount for your monthly payment.");
+                Console.WriteLine("Please enter the amount you pay monthly on your mortgage: ");
+                monthlyPayment = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Please enter the interest rate of your mortgage: ");
+            rate = Convert.ToInt32(Console.ReadLine());
+            while (rate < 0) {
+                Console.WriteLine("You need to enter a valid amount for your interest rate.");
+                Console.WriteLine("Please enter the interest rate of your mortgage: ");
+                rate = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Please enter the number of years that your mortgage covers: ");
+            years = Convert.ToInt32(Console.ReadLine());
+            while(years < 0) {
+                Console.WriteLine("You need to enter a valid amount for the years on your mortgage.");
+                Console.WriteLine("Please enter the number of years that your mortgage covers: ");
+                years = Convert.ToInt32(Console.ReadLine());
+            }
 
             return maxLoan;
         }
